@@ -1,5 +1,7 @@
 # Substring Count Challenge C#
 
+##### Difficulty - *Expert*
+
 You can try to solve this challenge by yourself on [HackerRank](https://www.hackerrank.com/challenges/how-many-substrings)
 
 #### Elapsed time per testcase:
