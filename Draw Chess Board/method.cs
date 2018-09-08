@@ -2,13 +2,14 @@ static int[] CalculatePosition(int[][] piece, int k) {
     int[] r = new int[piece.Length];
         
     // k = board size
-    // x = row
-    // y = column
+    // x  = row
+    // x1 = current row => k - x
+    // y  = column
     // Formula below:
-    // (((x + y) + (k * x)) - k) + x
+    // (((x + y) + (k * x1)) - k) + x1
     for (int i = 0; i < r.Length; i++) {
-        int x = k - piece[i][0];
-        r[i]  = (((piece[i][0] + piece[i][1]) + (k * x)) - k) + x;
+        int x1 = k - piece[i][0];
+        r[i]   = (((piece[i][0] + piece[i][1]) + (k * x1)) - k) + x1;
     }
         
     return r;
