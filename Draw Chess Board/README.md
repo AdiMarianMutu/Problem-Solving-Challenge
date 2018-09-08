@@ -10,9 +10,11 @@ Draw the given chess board
 
 ### Input: (*int n = 5, int k = 3, int[][] pieces*)
 (**n**: Length of the board's sides | **k**: Number of pieces) <br>
-*5 5* ...... (**5**: *row* | **5**: *column*)<br>
-*4 2* <br>
-*2 3*
+pieces { <br>
+    *5 5* ...... (**5**: *row* | **5**: *column*)<br>
+    *4 2* <br>
+    *2 3* <br>
+}
 
 ### Output:
 
