@@ -142,6 +142,10 @@ static int queensAttack(int n, int k, int r_q, int c_q, int[][] obstacles) {
                 qAttacks++;
             else
                 qSouthwest = false;
+        
+        // If the queen can't move anymore we break the for loop
+        if (!qSouth && !qSoutheast && !qEast && !qNortheast && !qNorth && !qNorthwest && !qWest && !qSouthwest)
+            break;
     }
         
     return qAttacks;
