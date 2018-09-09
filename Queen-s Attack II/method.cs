@@ -15,7 +15,7 @@ public class Chessboard {
 
         // Sometimes the obstacle can be exactly at half of the array
         // So if this happens and the current queen position is the same as the obstacle
-        // We return immediately true without searching the whole the array
+        // We return immediately true without searching the whole array
         if (obst[n][0] == r && obst[n][1] == c)
             return true;
 
