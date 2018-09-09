@@ -33,18 +33,11 @@ public class Chessboard {
                     return true;
             }
         // If the current queen row and the current array value are the same
-        // We search the array based on the column, using exactly the same logic used for the rows
+        // We search the array based on the column, but the column aren't sorted, so we start from 0 to max length
         } else {
-            if (c > obst[n][1]) {
-                for (int i = n; i < obst.Length; i++) {
-                    if (obst[i][0] == r && obst[i][1] == c)
-                        return true;
-                }
-            } else {
-                for (int i = n; i >= 0; i--) {
-                    if (obst[i][0] == r && obst[i][1] == c)
-                        return true;
-                }
+            for (int i = 0; i < obst.Length; i++) {
+                if (obst[i][0] == r && obst[i][1] == c)
+                    return true;
             }
         }
 
