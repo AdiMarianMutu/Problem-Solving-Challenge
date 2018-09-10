@@ -1,40 +1,30 @@
 public class Chessboard {
-    HashSet<int> Obstacles = new HashSet<int>();
-    int          Size;
+    Dictionary<string, int[]> Obstacles = new Dictionary<string, int[]>();
+    int                       Size;
 
     public Chessboard(int[][] obstacles, int size) {
-        this.Size      = size;
+        this.Size = size;
         CalculateObstaclePosition(obstacles);
-    }
-
-    private int CalculatePosition(int r, int c) {
-        // n = board size
-        // r = row
-        // x = current row => n - x
-        // c = column
-        // Formula below:
-        // (((r + c) + (n * x)) - n) + x
-        int n = Size;
-        int x = n - r;
-        return (((r + c) + (n * x)) - n) + x;
     }
 
     private void CalculateObstaclePosition(int[][] obst) {
         for (int i = 0; i < obst.Length; i++)
-            Obstacles.Add(CalculatePosition(obst[i][0], obst[i][1]));
+            try { Obstacles.Add($"{obst[i][0]} {obst[i][1]}", new[] { obst[i][0], obst[i][1] }); } catch { }
     }
 
     public bool ObstacleExists(int r, int c) {
         if (Obstacles.Count == 0)
             return false;
 
-        return Obstacles.Contains(CalculatePosition(r, c));
+        return Obstacles.ContainsKey($"{r} {c}");
     }
 }
 
 static int queensAttack(int n, int k, int r_q, int c_q, int[][] obstacles) {
     Chessboard board = new Chessboard(obstacles, n);
-            
+    
+    int qAttacks = 0;
+    
     bool qN_Dir  = true;
     bool qNW_Dir = true;
     bool qNE_Dir = true;
