@@ -2,4 +2,4 @@
 
 ##### Difficulty - *Easy*
 
-You can try to solve this challenge by yourself on [HackerRank](https://www.hackerrank.com/challenges/counting-valleys/forum)
+You can try to solve this challenge by yourself on [HackerRank](https://www.hackerrank.com/challenges/counting-valleys/problem)
